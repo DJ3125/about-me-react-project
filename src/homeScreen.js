@@ -1,3 +1,5 @@
+import ""
+
 export default function HomeScreen(){
     return(
         <div class="p-5 text-white bg-black" id="home">

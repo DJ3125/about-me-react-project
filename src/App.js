@@ -1,6 +1,5 @@
 import './App.css';
 
-
 import HomeScreen, {fixHome as readyHomePage} from "./homeScreen.js";
 import SchoolScreen from "./schoolScreen";
 import OutsideSchool from "./outsideSchoolScreen.js";
