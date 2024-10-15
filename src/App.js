@@ -3,6 +3,7 @@ import SchoolScreen, {initializeSchoolScreen as readySchool} from "./schoolScree
 import OutsideSchool from "./outsideSchoolScreen/outsideSchoolScreen.js";
 import GardeningScreen from "./gardeningScreen/gardeningScreen.js";
 import NavBar from "./navBar/navBar.js";
+import PokemonScreen, {setScreen} from "./pokemonScreen/pokemonScreen.js";
 import OffCanvasNavigation from "./offCanvasNavigation.js";
 
 import bg from "./homeScreen/codingBG.jpg";
@@ -33,6 +34,10 @@ function App() {
 
           <GardeningScreen/>
 
+          <hr/>
+
+          <PokemonScreen/>
+
         </div>  
         
         {/* <OffCanvasNavigation/> */}
@@ -44,6 +49,7 @@ function render(){
   fixDataViewing();
   readyHomePage();
   readySchool();
+  setScreen();
 
   window.document.getElementById("displayingData").addEventListener("scroll", function(){
     // alert("scrolled");
