@@ -13,16 +13,22 @@ export default function NavBar(){
 
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" href="#school">School</a>
+                <a class="nav-link active" href="#school" onClick={()=>{scroll("school");}}>School</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#outside">Outside School</a>
+                <a class="nav-link" href="#outside" onClick={()=>{scroll("outside");}}>Outside School</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#gardening">Gardening</a>
+                <a class="nav-link" href="#gardening" onClick={()=>{scroll("gardening");}}>Gardening</a>
               </li>
             </ul>
           </div>
         </nav>
     );
+}
+
+
+function scroll(id){
+  let container = window.document.getElementById("displayingData");
+  container.scrollTop = window.document.getElementById(id).offsetTop;
 }

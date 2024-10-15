@@ -36,3 +36,21 @@ img:hover:not(.divider){
   background-repeat: no-repeat;
   background-size: cover;
 } */
+
+
+/* 
+.screen:not(#home) * {
+  opacity: 0;
+
+} */
+
+.scrollHidden{
+  opacity: 0;
+  transform: translate(-100px, 0px);
+  transition: opacity 1s, transform 1s;
+}
+
+.scrollDisplay{
+  opacity: 1;
+  transform: translate(0px, 0px);
+}

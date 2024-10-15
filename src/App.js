@@ -51,6 +51,25 @@ function render(){
       i.style.clipPath = `rect(${Math.min(Math.max(i.offsetTop - i.scrollTop, 0), dataHeight)}px, 0px, ${Math.min(Math.max(i.offsetTop - i.scrollTop + i.offsetHeight, 0), dataHeight)}, 100%)`;
     }
   });
+
+
+  const observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add("scrollDisplay");
+      }else{
+        entry.target.classList.remove("scrollDisplay");
+      }
+    });
+  });
+
+  const elements = window.document.querySelectorAll(".Screen:not(#home) *");
+  // alert(elements.length);
+  elements.forEach(function(element){
+    element.classList.add("scrollHidden");
+    observer.observe(element);
+  });
+
 }
 
 function fixDataViewing(){

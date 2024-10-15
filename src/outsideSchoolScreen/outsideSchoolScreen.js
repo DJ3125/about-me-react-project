@@ -1,6 +1,6 @@
 export default function OutsideSchool(){
     return( 
-        <div id="outside">
+        <div id="outside" className="Screen">
             <h3> Outside School </h3>
             <p> Outside of school, I play sports such as swimming and tennis. </p>
             <p> I also like to watch TV, go outside, and read. </p>

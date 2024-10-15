@@ -9,19 +9,21 @@ import bg from "./codingBG.jpg";
 
 export default function HomeScreen(){
     return(
-        <div class="p-5 text-white bg-black" id="home">
-            <h1 class="position-relative top-25" id="HomeTitle"></h1>
-            <div id="appearingLayer" >
-                <div class="bg-light position-absolute translate-middle start-50" style={{"z-index": "1"}} id="infoTextBG">
-                    <h3 id="infoTextTitle">About Me</h3>
-                    <h4 id="description">Welcome to my webpage! Scroll down to learn more!</h4>
-                    <img src={compy} width="25%"/>
-                    <a href="#school"><button type="button" class="btn btn-primary d-block mx-auto mt-3">Lets Go!</button></a>
+        <div>
+            <div class="p-5 text-white bg-black" id="home">
+                <h1 class="position-relative top-25" id="HomeTitle"></h1>
+                <div id="appearingLayer" >
+                    <div class="bg-light position-absolute translate-middle start-50" style={{"z-index": "1"}} id="infoTextBG">
+                        <h3 id="infoTextTitle">About Me</h3>
+                        <h4 id="description">Welcome to my webpage! Scroll down to learn more!</h4>
+                        <img src={compy} width="25%"/>
+                        <a href="#school"><button type="button" class="btn btn-primary d-block mx-auto mt-3">Lets Go!</button></a>
+                    </div>
+                    {/* <img src={raptor} style={{"opacity": "0", "z-index": "-1"}} height="25%" class="position-absolute translate-middle start-50 top-50" id="raptor"/>
+                    <img src={dilo} style={{"opacity": "0", "z-index": "-1"}} height="25%" class="position-absolute translate-middle start-50 top-50" id="dilo"/> */}
                 </div>
-                {/* <img src={raptor} style={{"opacity": "0", "z-index": "-1"}} height="25%" class="position-absolute translate-middle start-50 top-50" id="raptor"/>
-                <img src={dilo} style={{"opacity": "0", "z-index": "-1"}} height="25%" class="position-absolute translate-middle start-50 top-50" id="dilo"/> */}
+                
             </div>
-            
         </div>
     );
 }
@@ -30,6 +32,7 @@ export function fixHome(){
     const data = window.document.getElementById("home");
     const height = window.innerHeight - data.getBoundingClientRect().top;
     data.style.height = `${height}px`;
+    document.getElementById("home").classList.add("Screen");
     initializeHome();
 }
 
