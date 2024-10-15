@@ -1,8 +1,8 @@
-import plant from "./pictures/Venus_Flytrap.jpg";
+import plant from "./Venus_Flytrap.jpg";
 
 export default function GardeningScreen(){
     return(
-        <div id="Gardening">
+        <div id="gardening">
             <h3 id="Gardening" class="subheader"> Gardening </h3>
             <p> One of my hobbies is gardening. At home, I grow many species of plants, both exotic and normal </p>
             <img src={plant} alt="My Favorite Plant" width="600vw"/>

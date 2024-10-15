@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+img:not(.divider){
+  transition: box-shadow 1s;
+}
+
+img:hover:not(.divider){
+
+  box-shadow: 3px 3px 5px black;
+}
+
+.divider{
+  clip-path: rect(0px, 0px, 30px, 30px);
+
+}
+
+
+/*Got from W3 Schools*/
+/* .parallax {
+  background-image: url("./homeScreen/codingBG.jpg");
+  height: 30%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */

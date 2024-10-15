@@ -1,11 +1,13 @@
-import './App.css';
-
-import HomeScreen, {fixHome as readyHomePage} from "./homeScreen.js";
-import SchoolScreen from "./schoolScreen";
-import OutsideSchool from "./outsideSchoolScreen.js";
-import GardeningScreen from "./gardeningScreen.js";
-import NavBar from "./navBar.js";
+import HomeScreen, {fixHome as readyHomePage} from "./homeScreen/homeScreen.js";
+import SchoolScreen, {initializeSchoolScreen as readySchool} from "./schoolScreen/schoolScreen.js";
+import OutsideSchool from "./outsideSchoolScreen/outsideSchoolScreen.js";
+import GardeningScreen from "./gardeningScreen/gardeningScreen.js";
+import NavBar from "./navBar/navBar.js";
 import OffCanvasNavigation from "./offCanvasNavigation.js";
+
+import bg from "./homeScreen/codingBG.jpg";
+
+let dataHeight;
 
 function App() {
   return (
@@ -13,24 +15,27 @@ function App() {
         
         <NavBar/>
 
-        <div id="displayingData" style={{"height": window.screen.height, "overflow-y": "scroll"}} data-bs-spy="scroll" data-bs-target="#myNav" data-bs-offset="20" data-bs-smooth-scroll="true" tabindex="0"  class="d-grid position-relative">
+        <div id="displayingData" style={{"height": window.screen.height, "scroll-behavior": "smooth"}} data-bs-spy="scroll" data-bs-target="#myNav" data-bs-offset="20" data-bs-smooth-scroll="true" tabindex="0"  class="d-grid position-relative">
           <HomeScreen />
 
           <br/>
+          <div className="parallax"></div>          
 
           <SchoolScreen/>
           
           <hr/>
+          <div className="parallax"></div>
 
           <OutsideSchool/>
           
           <hr/>
+          <div className="parallax"></div>
 
           <GardeningScreen/>
 
         </div>  
         
-        <OffCanvasNavigation/>
+        {/* <OffCanvasNavigation/> */}
     </div>
   );
 }
@@ -38,12 +43,21 @@ function App() {
 function render(){
   fixDataViewing();
   readyHomePage();
+  readySchool();
+
+  window.document.getElementById("displayingData").addEventListener("scroll", function(){
+    // alert("scrolled");
+    for(let i of window.document.getElementsByClassName("divider")){
+      i.style.clipPath = `rect(${Math.min(Math.max(i.offsetTop - i.scrollTop, 0), dataHeight)}px, 0px, ${Math.min(Math.max(i.offsetTop - i.scrollTop + i.offsetHeight, 0), dataHeight)}, 100%)`;
+    }
+  });
 }
 
 function fixDataViewing(){
   let data = window.document.getElementById("displayingData");
   let height = window.innerHeight - data.getBoundingClientRect().top;
   data.style.height = `${height}px`;
+  dataHeight = height;
 }
 
 export default App;

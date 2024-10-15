@@ -1,8 +1,8 @@
-import logo from "./pictures/logo.jpg";
+import logo from "./logo.jpg";
 
 export default function NavBar(){
     return(
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark px-3" id="myNav">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark px-3" id="myNav" style={{"z-index": "5"}}>
           <div class="container-fluid">
             <a class="navbar-brand" href="#home">
               <div>
@@ -13,13 +13,13 @@ export default function NavBar(){
 
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" href="#School">School</a>
+                <a class="nav-link active" href="#school">School</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#Outside">Outside School</a>
+                <a class="nav-link" href="#outside">Outside School</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#Gardening">Gardening</a>
+                <a class="nav-link" href="#gardening">Gardening</a>
               </li>
             </ul>
           </div>

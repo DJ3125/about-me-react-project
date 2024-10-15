@@ -1,0 +1,51 @@
+@font-face{
+    font-family: codeFont;
+    src: url("../font/static/JetBrainsMono-MediumItalic.ttf");
+}
+
+#HomeTitle{
+    font-family: codeFont;
+    animation-name: slideIn;
+    animation-duration: 1s;
+}
+
+#infoTextBG{
+    opacity: 0;
+    /* height: 60%; */
+    width: 20%;
+    top: 50%;
+    border-radius: 25px;
+    padding: 1%;
+    border: 2px white solid;
+    
+    /* opacity: 0.9;
+    filter: blur(4px); */
+}
+
+#infoTextTitle{
+    font-family: codeFont;
+    background-color: black;
+    border-radius: 30px;
+    width: 95%;
+    text-align: center;
+    margin: auto;
+    margin-top: 1%;
+}
+
+#description {
+    font-family: codeFont;
+    color: black;
+    margin-top: 10%;
+}
+
+/* @keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translate(0px, -150px);
+    }
+
+    100% {
+        opactiy: 1;
+        transform: translate(0px, 0px);
+    }
+} */
