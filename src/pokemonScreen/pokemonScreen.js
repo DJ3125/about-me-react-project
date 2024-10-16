@@ -5,7 +5,7 @@ export default function PokemonScreen(){
             <p>I also like to collect pokemon cards! One of my favorite pokemon is:</p>
             <br/>
             <h4 id="pokemonTitle"></h4>
-            <img id="pokeImage" width="50%"/>
+            <img id="pokeImage"/>
             <p id="happy"></p>
             <p id="rate"></p>
         </div>
@@ -24,7 +24,11 @@ export async function setScreen(){
     let json = await getAPI();
     window.document.getElementById("pokemonTitle").innerHTML = json.name.toUpperCase();
     // alert(json.id);
-    // window.document.getElementById("pokeImage").src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/681.png";
+    new Promise(function(accept){
+        window.document.getElementById("pokeImage").src = "";
+        accept();
+    });
+    
     window.document.getElementById("happy").innerHTML = "Base Happiness is: " + json.base_happiness;
     window.document.getElementById("rate").innerHTML = "Capture rate is: " + json.capture_rate;
 } 

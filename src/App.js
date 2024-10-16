@@ -8,15 +8,14 @@ import OffCanvasNavigation from "./offCanvasNavigation.js";
 
 import bg from "./homeScreen/codingBG.jpg";
 
-let dataHeight;
-
+let dataHeight; 
 function App() {
   return (
     <div className="App" class="text-center" onLoad={render}>
         
         <NavBar/>
 
-        <div id="displayingData" style={{"height": window.screen.height, "scroll-behavior": "smooth"}} data-bs-spy="scroll" data-bs-target="#myNav" data-bs-offset="20" data-bs-smooth-scroll="true" tabindex="0"  class="d-grid position-relative">
+        <div id="displayingData" style={{"scroll-behavior": "smooth"}} data-bs-spy="scroll" data-bs-target="#myNav" data-bs-offset="20" data-bs-smooth-scroll="true" tabindex="0"  class="d-grid position-relative">
           <HomeScreen />
 
           <br/>
@@ -46,11 +45,29 @@ function App() {
 }
 
 function render(){
-  fixDataViewing();
+  window.document.querySelector(":root").style.setProperty("--screenHeight", `${fixDataViewing()}px`);
+  window.addEventListener("resize", function(){
+    window.document.querySelector(":root").style.setProperty("--screenHeight", `${fixDataViewing()}px`);
+  });
+
+
+  // fixDataViewing();
   readyHomePage();
   readySchool();
   setScreen();
 
+  readyScrollAnimation();
+
+}
+
+function fixDataViewing(){
+  let data = window.document.getElementById("displayingData");
+  dataHeight = window.innerHeight - data.getBoundingClientRect().top;
+  return dataHeight;
+}
+
+
+function readyScrollAnimation(){
   window.document.getElementById("displayingData").addEventListener("scroll", function(){
     // alert("scrolled");
     for(let i of window.document.getElementsByClassName("divider")){
@@ -75,14 +92,7 @@ function render(){
     element.classList.add("scrollHidden");
     observer.observe(element);
   });
-
 }
 
-function fixDataViewing(){
-  let data = window.document.getElementById("displayingData");
-  let height = window.innerHeight - data.getBoundingClientRect().top;
-  data.style.height = `${height}px`;
-  dataHeight = height;
-}
 
 export default App;

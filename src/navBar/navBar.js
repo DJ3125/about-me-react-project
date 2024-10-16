@@ -13,16 +13,16 @@ export default function NavBar(){
 
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" href="#school" onClick={()=>{scroll("school");}}>School</a>
+                <a class="nav-link active" onClick={()=>{scroll("school");}}>School</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#outside" onClick={()=>{scroll("outside");}}>Outside School</a>
+                <a class="nav-link" onClick={()=>{scroll("outside");}}>Outside School</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#gardening" onClick={()=>{scroll("gardening");}}>Gardening</a>
+                <a class="nav-link" onClick={()=>{scroll("gardening");}}>Gardening</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#pokemon" onClick={()=>{scroll("pokemon");}}>Pokemon</a>
+                <a class="nav-link" onClick={()=>{scroll("pokemon");}}>Pokemon</a>
               </li>
             </ul>
           </div>
