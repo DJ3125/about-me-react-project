@@ -16,45 +16,10 @@ code {
     monospace;
 }
 
-img{
-  height: 60%;
-}
-
-img:not(.divider){
-  transition: box-shadow 1s;
-}
-
-img:hover:not(.divider){
-
-  box-shadow: 3px 3px 5px black;
-}
-
-.divider{
-  clip-path: rect(0px, 0px, 30px, 30px);
-}
-
-
-/*Got from W3 Schools*/
-/* .parallax {
-  background-image: url("./homeScreen/codingBG.jpg");
-  height: 30%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-
-
-/* 
-.screen:not(#home) * {
-  opacity: 0;
-
-} */
-
 .scrollHidden{
   opacity: 0;
   transform: translate(-100%, 0px);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 1s, box-shadow inherit;
 }
 
 .scrollDisplay{
@@ -62,14 +27,34 @@ img:hover:not(.divider){
   transform: translate(0px, 0px);
 }
 
-.Screen{
-  height: var(--screenHeight);
+img{
+  transition: box-shadow 1s;
+  height: 60%;
 }
 
-/* .Screen:not(#home) *:not(h3){
-  margin: 1%;
-} */
+img:hover{
+  box-shadow: 3px 3px 5px black;
+}
+
+.Screen{
+  height: var(--screenHeight);
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
 
 #displayingData{
   height: var(--screenHeight);
+  position: relative;
+}
+
+
+/*Got from w3 schools*/
+.parallax{
+  background-image: url("./homeScreen/codingBG.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 20%;
+  border: 10px black solid;
 }

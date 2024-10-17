@@ -9,7 +9,7 @@ export default function SchoolScreen(){
             <p> The electives that I'm currently taking are Spanish and Computer Science.</p>
             <img src={school} alt="Conant High School" />
             <br/>
-            <a href="https://adc.d211.org/Domain/10" class="links"> Conant High School </a>
+            <a href="https://adc.d211.org/Domain/10"> Conant High School </a>
         </div>
     );
 }

@@ -15,25 +15,25 @@ function App() {
         
         <NavBar/>
 
-        <div id="displayingData" style={{"scroll-behavior": "smooth"}} data-bs-spy="scroll" data-bs-target="#myNav" data-bs-offset="20" data-bs-smooth-scroll="true" tabindex="0"  class="d-grid position-relative">
+        <div id="displayingData" style={{"scrollBehavior": "smooth", "position": "relative"}} data-bs-spy="scroll" data-bs-target="#myNav" tabindex="0">
           <HomeScreen />
+          
 
-          <br/>
-          <div className="parallax"></div>          
-
+          <div className="parallax"></div>         
+          
           <SchoolScreen/>
           
-          <hr/>
-          <div className="parallax"></div>
-
+          
+          <div className="parallax"></div>      
+          
           <OutsideSchool/>
           
-          <hr/>
-          <div className="parallax"></div>
-
+          
+          <div className="parallax"></div>      
+          
           <GardeningScreen/>
 
-          <hr/>
+          <div className="parallax"></div>
 
           <PokemonScreen/>
 
@@ -45,12 +45,8 @@ function App() {
 }
 
 function render(){
-  window.document.querySelector(":root").style.setProperty("--screenHeight", `${fixDataViewing()}px`);
-  window.addEventListener("resize", function(){
-    window.document.querySelector(":root").style.setProperty("--screenHeight", `${fixDataViewing()}px`);
-  });
-
-
+  onScreenResize();
+  window.addEventListener("resize", onScreenResize);
   // fixDataViewing();
   readyHomePage();
   readySchool();
@@ -58,6 +54,11 @@ function render(){
 
   readyScrollAnimation();
 
+}
+
+
+function onScreenResize(){
+  window.document.querySelector(":root").style.setProperty("--screenHeight", `${fixDataViewing()}px`);
 }
 
 function fixDataViewing(){
@@ -69,7 +70,6 @@ function fixDataViewing(){
 
 function readyScrollAnimation(){
   window.document.getElementById("displayingData").addEventListener("scroll", function(){
-    // alert("scrolled");
     for(let i of window.document.getElementsByClassName("divider")){
       i.style.clipPath = `rect(${Math.min(Math.max(i.offsetTop - i.scrollTop, 0), dataHeight)}px, 0px, ${Math.min(Math.max(i.offsetTop - i.scrollTop + i.offsetHeight, 0), dataHeight)}, 100%)`;
     }
@@ -86,9 +86,7 @@ function readyScrollAnimation(){
     });
   });
 
-  const elements = window.document.querySelectorAll(".Screen:not(#home) *");
-  // alert(elements.length);
-  elements.forEach(function(element){
+  window.document.querySelectorAll(".Screen:not(#home) *").forEach(function(element){
     element.classList.add("scrollHidden");
     observer.observe(element);
   });

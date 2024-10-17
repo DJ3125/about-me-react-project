@@ -9,10 +9,10 @@ import bg from "./codingBG.jpg";
 
 export default function HomeScreen(){
     return(
-        <div class="p-5 text-white bg-black" id="home">
+        <div class="p-5 text-white bg-black" id="home" >
             <h1 class="position-relative top-25" id="HomeTitle"></h1>
             <div id="appearingLayer" >
-                <div class="bg-light position-absolute translate-middle start-50" style={{"z-index": "1"}} id="infoTextBG">
+                <div class="bg-light position-absolute translate-middle start-50" style={{"zIndex": "1"}} id="infoTextBG">
                     <h3 id="infoTextTitle">About Me</h3>
                     <h4 id="description">Welcome to my webpage! Scroll down to learn more!</h4>
                     <img src={compy} width="25%"/>
@@ -128,16 +128,6 @@ async function addEverythingToHomeScreen(){
             }
         ),
         animateTitleLetters("DYLAN JA!!!!"),
-        // animate(window.document.getElementById("dilo"), 1000, "transform: translate(-300px, 0px); z-index: -1;", 
-        //     {
-        //         opacity: "0",
-        //         transform: "translate(0px, 0px)"
-        //     },
-        //     {
-        //         opacity: "1",
-        //         transform: "translate(-300px, 0px)"
-        //     }
-        // )
     ]);
 }
 
@@ -146,33 +136,33 @@ async function animate(element, duration, endStyle, ...frame){
     element.style = endStyle;
 }
 
-async function addImages(){
+// async function addImages(){
 
-    let docRaptor = window.document.createElement("img");
-    docRaptor.src = dilo;
-    // docRaptor.height = "300px";
-    // docRaptor.width = "300px";
-    docRaptor.style ="position: absolute; height: 200px; ";
+//     let docRaptor = window.document.createElement("img");
+//     docRaptor.src = dilo;
+//     // docRaptor.height = "300px";
+//     // docRaptor.width = "300px";
+//     docRaptor.style ="position: absolute; height: 200px; ";
 
-    // let docDilo = window.document.createElement("img");
-    // docDilo.src = dilo;
-    // docDilo.height = "30%";
-    // docDilo.style= "position: absolute;"
+//     // let docDilo = window.document.createElement("img");
+//     // docDilo.src = dilo;
+//     // docDilo.height = "30%";
+//     // docDilo.style= "position: absolute;"
 
-    // window.document.getElementById("home").appendChild(docDilo);
-    window.document.getElementById("appearingLayer").appendChild(docRaptor);
+//     // window.document.getElementById("home").appendChild(docDilo);
+//     window.document.getElementById("appearingLayer").appendChild(docRaptor);
 
-    return Promise.all([
-        animate(docRaptor, 1000, "position: absolute; height: 200px; opacity: 1; transform: translate(-300px, 0px)",
-            {
-                opacity: "0",
-                transform: "translate(0px, 0px)"
-            },
-            {
-                opacity: "1",
-                transform: "translate(-300px, 0px)"
-            }
-        )
-    ]);
+//     return Promise.all([
+//         animate(docRaptor, 1000, "position: absolute; height: 200px; opacity: 1; transform: translate(-300px, 0px)",
+//             {
+//                 opacity: "0",
+//                 transform: "translate(0px, 0px)"
+//             },
+//             {
+//                 opacity: "1",
+//                 transform: "translate(-300px, 0px)"
+//             }
+//         )
+//     ]);
 
-}
+// }
