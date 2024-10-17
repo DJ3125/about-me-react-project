@@ -32,18 +32,7 @@ export function fixHome(){
 }
 
 export async function initializeHome(){
-    // fixHome();
-    // let head = window.document.getElementById("home");
-    // let rules = head.ownerDocument.defaultView.getMatchedCSSRules(head, "");
-
-
-
-
-    // await addImages();
-
-
     await animateTitleLetters("Invoke-Item DJ.js");
-
 
     await animateCursor(window.document.getElementById("HomeTitle"), 3000);
 

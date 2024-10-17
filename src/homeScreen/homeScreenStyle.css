@@ -3,6 +3,8 @@
     src: url("../font/static/JetBrainsMono-Regular.ttf");
 }
 
+
+
 #HomeTitle{
     font-family: codeFont;
     animation-name: slideIn;

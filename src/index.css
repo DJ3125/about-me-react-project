@@ -37,9 +37,12 @@ img:hover{
 }
 
 .Screen{
+  min-height: min-content;
   height: var(--screenHeight);
   padding-top: 2%;
   padding-bottom: 2%;
+  position: relative;
+
 }
 
 #displayingData{
