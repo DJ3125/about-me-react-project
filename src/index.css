@@ -17,6 +17,7 @@ code {
     monospace;
 }
 
+
 img{
   height: 60%;
 }
@@ -25,14 +26,14 @@ img:hover{
   box-shadow: 3px 3px 5px black;
 }
 
+img.scrollHidden{
+  transition: opacity 1s, transform 1s, box-shadow 1s;
+}
+
 .scrollHidden{
   opacity: 0;
   transform: translate(-100%, 0px);
   transition: opacity 1s, transform 1s;
-}
-
-img.scrollHidden {
-  transition: opacity 1s, transform 1s, box-shadow 1s;
 }
 
 .scrollDisplay{
@@ -49,12 +50,6 @@ img.scrollHidden {
 
 }
 
-#displayingData{
-  height: var(--screenHeight);
-  position: relative;
-}
-
-
 /*Got from w3 schools*/
 .parallax{
   --url: url("./homeScreen/codingBG.jpg");
@@ -65,4 +60,11 @@ img.scrollHidden {
   background-size: cover;
   min-height: 20%;
   border: 10px black solid;
+}
+
+#displayingData{
+  height: var(--screenHeight);
+  position: relative;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }

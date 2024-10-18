@@ -1,15 +1,25 @@
 #scrollBillBoard img {
-    position: relative;
+    --width: 10%;
+    width: var(--width);
+    position: absolute;
+    left: 0%;
     animation-name: scrollSide;
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
+
+#scrollBillBoard{
+    border: 2px solid black;
+    height: 100px;
+}
+
 
 @keyframes scrollSide{
     from{
-        transform: translate(0px, 0px);
+        left: 0%;
     }
     to{
-        transform: translate(100%, 0px);
+        left: 110%;
     }
 }

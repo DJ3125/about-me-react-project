@@ -15,7 +15,7 @@ function App() {
         
         <NavBar/>
 
-        <div id="displayingData" style={{"scrollBehavior": "smooth", "position": "relative"}} data-bs-spy="scroll" data-bs-target="#myNav" tabIndex="0">
+        <div id="displayingData" data-bs-spy="scroll" data-bs-target="#myNav" tabIndex="0">
           <HomeScreen />
           
           <Parallax url="./homeScreen/codingBG.jpg"/>        

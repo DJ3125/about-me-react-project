@@ -24,6 +24,7 @@ export function startScreen(){
     for(let i of names){
         const img = window.document.createElement("img");
         img.src = dino;
+        // img.style.position = "absolute";
         console.log(img.src);
         window.document.getElementById("scrollBillBoard").appendChild(img);
     }
