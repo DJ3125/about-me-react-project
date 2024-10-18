@@ -9,7 +9,7 @@ import bg from "./codingBG.jpg";
 
 export default function HomeScreen(){
     return(
-        <div class="p-5 text-white bg-black" id="home" >
+        <div class="p-5 text-white bg-black" id="home">
             <h1 class="position-relative top-25" id="HomeTitle"></h1>
             <div id="appearingLayer" >
                 <div class="bg-light position-absolute translate-middle start-50" style={{"zIndex": "1"}} id="infoTextBG">

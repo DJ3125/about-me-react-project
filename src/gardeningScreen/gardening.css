@@ -1,0 +1,15 @@
+#scrollBillBoard img {
+    position: relative;
+    animation-name: scrollSide;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scrollSide{
+    from{
+        transform: translate(0px, 0px);
+    }
+    to{
+        transform: translate(100%, 0px);
+    }
+}

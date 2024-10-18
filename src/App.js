@@ -1,9 +1,9 @@
 import HomeScreen, {fixHome as readyHomePage} from "./homeScreen/homeScreen.js";
 import SchoolScreen, {initializeSchoolScreen as readySchool} from "./schoolScreen/schoolScreen.js";
 import OutsideSchool from "./outsideSchoolScreen/outsideSchoolScreen.js";
-import GardeningScreen from "./gardeningScreen/gardeningScreen.js";
+import GardeningScreen, {startScreen as readyGardening} from "./gardeningScreen/gardeningScreen.js";
 import NavBar from "./navBar/navBar.js";
-import PokemonScreen, {setScreen} from "./pokemonScreen/pokemonScreen.js";
+import PokemonScreen, {setScreen as setPokemonScreen} from "./pokemonScreen/pokemonScreen.js";
 import OffCanvasNavigation from "./offCanvasNavigation.js";
 
 import bg from "./homeScreen/codingBG.jpg";
@@ -15,25 +15,22 @@ function App() {
         
         <NavBar/>
 
-        <div id="displayingData" style={{"scrollBehavior": "smooth", "position": "relative"}} data-bs-spy="scroll" data-bs-target="#myNav" tabindex="0">
+        <div id="displayingData" style={{"scrollBehavior": "smooth", "position": "relative"}} data-bs-spy="scroll" data-bs-target="#myNav" tabIndex="0">
           <HomeScreen />
           
-
-          <div className="parallax"></div>         
+          <Parallax url="./homeScreen/codingBG.jpg"/>        
           
           <SchoolScreen/>
           
-          
-          <div className="parallax"></div>      
+          <Parallax url="./homeScreen/codingBG.jpg"/>     
           
           <OutsideSchool/>
           
-          
-          <div className="parallax"></div>      
+          <Parallax url="./homeScreen/codingBG.jpg"/>    
           
           <GardeningScreen/>
 
-          <div className="parallax"></div>
+          <Parallax url="./homeScreen/codingBG.jpg"/>
 
           <PokemonScreen/>
 
@@ -44,22 +41,31 @@ function App() {
   );
 }
 
+function Parallax(url){
+  return (
+    <>
+      <br/>
+      <div className="parallax" style={{"--url": `url(${url})`}}></div>
+      <br/>
+    </>
+  );
+}
+
+
 function render(){
   onScreenResize();
   window.addEventListener("resize", onScreenResize);
-  // fixDataViewing();
   readyHomePage();
   readySchool();
-  setScreen();
+  setPokemonScreen();
+  readyGardening();
 
   readyScrollAnimation();
 
 }
 
 
-function onScreenResize(){
-  window.document.querySelector(":root").style.setProperty("--screenHeight", `${fixDataViewing()}px`);
-}
+function onScreenResize(){window.document.querySelector(":root").style.setProperty("--screenHeight", `${fixDataViewing()}px`);}
 
 function fixDataViewing(){
   let data = window.document.getElementById("displayingData");
@@ -78,11 +84,8 @@ function readyScrollAnimation(){
 
   const observer = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add("scrollDisplay");
-      }else{
-        entry.target.classList.remove("scrollDisplay");
-      }
+      if(entry.isIntersecting){entry.target.classList.add("scrollDisplay");
+      }else{entry.target.classList.remove("scrollDisplay");}
     });
   });
 

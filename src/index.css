@@ -1,5 +1,6 @@
 :root{
   --screenHeight: 100px;
+  --screenWidth: 100px;
 }
 
 body {
@@ -16,24 +17,27 @@ code {
     monospace;
 }
 
-.scrollHidden{
-  opacity: 0;
-  transform: translate(-100%, 0px);
-  transition: opacity 1s, transform 1s, box-shadow inherit;
-}
-
-.scrollDisplay{
-  opacity: 1;
-  transform: translate(0px, 0px);
-}
-
 img{
-  transition: box-shadow 1s;
   height: 60%;
 }
 
 img:hover{
   box-shadow: 3px 3px 5px black;
+}
+
+.scrollHidden{
+  opacity: 0;
+  transform: translate(-100%, 0px);
+  transition: opacity 1s, transform 1s;
+}
+
+img.scrollHidden {
+  transition: opacity 1s, transform 1s, box-shadow 1s;
+}
+
+.scrollDisplay{
+  opacity: 1;
+  transform: translate(0px, 0px);
 }
 
 .Screen{
@@ -53,7 +57,8 @@ img:hover{
 
 /*Got from w3 schools*/
 .parallax{
-  background-image: url("./homeScreen/codingBG.jpg");
+  --url: url("./homeScreen/codingBG.jpg");
+  background-image: var(--url);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
