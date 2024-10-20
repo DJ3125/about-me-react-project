@@ -30,9 +30,9 @@ function App() {
           
           <GardeningScreen/>
 
-          <Parallax url="./homeScreen/codingBG.jpg"/>
+          {/* <Parallax url="./homeScreen/codingBG.jpg"/>
 
-          <PokemonScreen/>
+          <PokemonScreen/> */}
 
         </div>  
         
@@ -44,9 +44,8 @@ function App() {
 function Parallax(url){
   return (
     <>
-      <br/>
       <div className="parallax" style={{"--url": `url(${url})`}}></div>
-      <br/>
+      
     </>
   );
 }
@@ -89,10 +88,7 @@ function readyScrollAnimation(){
     });
   });
 
-  window.document.querySelectorAll(".Screen:not(#home) *").forEach(function(element){
-    element.classList.add("scrollHidden");
-    observer.observe(element);
-  });
+  window.document.querySelectorAll(".scrollHidden").forEach(function(element){observer.observe(element);});
 }
 
 

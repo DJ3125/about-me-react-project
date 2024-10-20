@@ -1,25 +1,58 @@
-#scrollBillBoard img {
-    --width: 10%;
+#scrollBillBoard .billboardChild {
+    --width: 150px;
+    --height: 90%;
     width: var(--width);
+    max-width: var(--width);
+    height: var(--height);
+    top: calc((100% - var(--height))/2);
     position: absolute;
     left: 0%;
     animation-name: scrollSide;
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    border: 2px black solid;
+}
+
+.billboardChild::after{
+    content: attr(plantName);    
+    font-family: "Times New Roman", Times, serif;
+    text-transform: capitalize;
+
+    color: black;
+    left: 0%;
+    bottom: 0%;
+    position: absolute;
+    
+    backdrop-filter: blur(2px);
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 5px;
+    
+}
+
+.plantSideInfo{
+    position: relative;
+    top: 0;
+    transform: translate(0, -100%);
+    background-color: white;
+    padding: 5px;    
+    z-index: 5;
+
 }
 
 #scrollBillBoard{
     border: 2px solid black;
-    height: 100px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
 }
 
 
 @keyframes scrollSide{
     from{
-        left: 0%;
+        left: calc(-1 * var(--width, 0));
     }
     to{
-        left: 110%;
+        left: 100%;
     }
 }

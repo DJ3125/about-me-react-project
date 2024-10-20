@@ -21,9 +21,9 @@ export default function NavBar(){
               <li class="nav-item">
                 <a class="nav-link" href="#gardening" onClick={()=>{scroll("gardening");}}>Gardening</a>
               </li>
-              <li class="nav-item">
+              {/* <li class="nav-item">
                 <a class="nav-link" href="#pokemon" onClick={()=>{scroll("pokemon");}}>Pokemon</a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </nav>

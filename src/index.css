@@ -20,13 +20,14 @@ code {
 
 img{
   height: 60%;
+  max-width: 100%;
 }
 
-img:hover{
+.hoverShadow:hover{
   box-shadow: 3px 3px 5px black;
 }
 
-img.scrollHidden{
+.hoverShadow.scrollHidden{
   transition: opacity 1s, transform 1s, box-shadow 1s;
 }
 
@@ -67,4 +68,5 @@ img.scrollHidden{
   position: relative;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
