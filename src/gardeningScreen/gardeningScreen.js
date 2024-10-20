@@ -9,15 +9,17 @@ export default function GardeningScreen(){
     return(
         <>
             <div id="gardening" className="Screen">
-                <h3 className="scrollHidden" id="Gardening"> Gardening </h3>
-                <p className="scrollHidden"> One of my hobbies is gardening. At home, I grow many species of plants, both exotic and normal </p>
-                <img src={plant} alt="My Favorite Plant" className="hoverShadow scrollHidden"/>
-                <p className="scrollHidden"> The Venus Flytrap is my favorite exotic plant.</p>
-                <p className="scrollHidden"> I find it so interesting how these and other plants have evolved to eat meat in order to survive. </p>  
-                <br/>
-                <h6>Here are some other plants I grow:</h6>
-                <div id="scrollBillBoard">
-                    
+                <div class="screenContent">
+                    <h3 className="scrollHidden" id="Gardening"> Gardening </h3>
+                    <p className="scrollHidden"> One of my hobbies is gardening. At home, I grow many species of plants, both exotic and normal </p>
+                    <img src={plant} alt="My Favorite Plant" className="hoverShadow scrollHidden"/>
+                    <p className="scrollHidden"> The Venus Flytrap is my favorite exotic plant.</p>
+                    <p className="scrollHidden"> I find it so interesting how these and other plants have evolved to eat meat in order to survive. </p>  
+                    <br/>
+                    <h6>Here are some other plants I grow:</h6>
+                    <div id="scrollBillBoard">
+                        
+                    </div>
                 </div>
             </div>
         </>

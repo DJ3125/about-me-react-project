@@ -40,6 +40,10 @@
 
 }
 
+#gardening{
+    background-image: url("./plantBG.jpg");
+}
+
 #scrollBillBoard{
     border: 2px solid black;
     height: 150px;

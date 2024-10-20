@@ -5,6 +5,7 @@ import GardeningScreen, {startScreen as readyGardening} from "./gardeningScreen/
 import NavBar from "./navBar/navBar.js";
 import PokemonScreen, {setScreen as setPokemonScreen} from "./pokemonScreen/pokemonScreen.js";
 import OffCanvasNavigation from "./offCanvasNavigation.js";
+import CodingScreen from "./codingScreen/codingScreen.js";
 
 import bg from "./homeScreen/codingBG.jpg";
 
@@ -22,17 +23,18 @@ function App() {
           
           <SchoolScreen/>
           
-          <Parallax url="./homeScreen/codingBG.jpg"/>     
+          {/* <Parallax url="./homeScreen/codingBG.jpg"/>     
           
-          <OutsideSchool/>
+          <OutsideSchool/> */}
           
           <Parallax url="./homeScreen/codingBG.jpg"/>    
           
           <GardeningScreen/>
 
-          {/* <Parallax url="./homeScreen/codingBG.jpg"/>
+          <Parallax url="./homeScreen/codingBG.jpg"/>
 
-          <PokemonScreen/> */}
+          <CodingScreen/>
+          {/* <PokemonScreen/> */}
 
         </div>  
         
